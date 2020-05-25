@@ -18,11 +18,11 @@ jobs:
           - pyodbc
     steps:
     
-    - name: Fetch latest commit
-      uses: actions/checkout@v2
+    - name: Clone repo
+      run: git clone ${{ github.repository }}
 
     - name: Fetch all tags
-      run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+      run: git fetch origin +refs/tags/*:refs/tags/*
 
     - name: Setup Python 3.6 for integration-test-docker-environment
       uses: actions/setup-python@v2
