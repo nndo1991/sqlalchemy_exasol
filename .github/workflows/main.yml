@@ -18,9 +18,6 @@ jobs:
           - pyodbc
     steps:
 
-    - name: Print ref 2
-      run: ${{ github.event.ref }}
-
     - name: Print ref 3
       run: echo ${{ github.event.ref }}
     
