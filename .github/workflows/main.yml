@@ -13,10 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python: [3.6, 2.7]
+        python: [3.6]
         connector:
-          - pyodbc          
-          - turbodbc
+          - pyodbc
     steps:
     - uses: actions/checkout@v2
 
@@ -76,7 +75,7 @@ jobs:
       working-directory: .. 
 
     - name: Build sdist and wheel packages
-      run: python setup.py sdist bdist_wheel
+      run: pwd && python setup.py sdist bdist_wheel
 
     - name: Push package to Test Pypi
       if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
