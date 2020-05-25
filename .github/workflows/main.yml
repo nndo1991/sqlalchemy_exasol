@@ -18,8 +18,10 @@ jobs:
           - pyodbc
     steps:
     
-    - name: Fetch latest commit and all tags from repo
+    - name: Fetch latest commit
       uses: actions/checkout@v2
+
+    - name: Fetch all tags
       run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
 
     - name: Setup Python 3.6 for integration-test-docker-environment
