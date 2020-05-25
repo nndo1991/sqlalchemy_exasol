@@ -17,6 +17,12 @@ jobs:
         connector:
           - pyodbc
     steps:
+
+    - name: Print ref 2
+      run: ${{ github.event.ref }}
+
+    - name: Print ref 3
+      run: echo ${{ github.event.ref }}
     
     - name: Fetch repository
       uses: actions/checkout@v2
@@ -83,15 +89,6 @@ jobs:
 
     - name: Build sdist and wheel packages
       run: python setup.py sdist bdist_wheel
-
-    - name: Print ref
-      run: github.event.ref
-
-    - name: Print ref 2
-      run: ${{ github.event.ref }}
-
-    - name: Print ref 3
-      run: echo ${{ github.event.ref }}
 
     - name: Push package to Test Pypi
       if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
