@@ -67,7 +67,10 @@ jobs:
     - name: Add TEST_SCHEMA_2 to test DDL
       run: echo "CREATE SCHEMA TEST_SCHEMA_2;" >> tests/test/enginedb_small/schema.sql
       working-directory: ../integration-test-docker-environment
-        
+
+    - name: Run git status
+      run: git status
+
     - name: Build sdist and wheel packages
       run: python setup.py sdist bdist_wheel
 
