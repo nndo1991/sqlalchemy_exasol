@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-Defines the setup for this package..
+Defines the setup for this package.
 
 Do not forget to document your changes in CHANGES.md
 
